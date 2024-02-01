@@ -4,7 +4,7 @@
 # GIT_TOKEN=$YOUR_GIT_TOKEN  # Reemplaza con tu propio token
 
 # Clona el repositorio dentro del contenedor
-git clone https://$GH_TOKEN@$REPO /repo
+git clone https://doe:$GH_TOKEN@$REPO /repo
 
 # Navega al directorio del repositorio
 cd /repo
