@@ -3,12 +3,14 @@
 ## Description
 This GitHub Action, named `err0-check-action`, is designed to perform err0 action checks. It verifies errors and checks associated with a specific repository.
 
+## Disclaimer ⚠️
+err0-action-check does not have automatic support for pull requests. But you can define the branch you want to target. In case you don't define any branch and execute a pull request it will always point to the main branch.
 
 ## Inputs
 The following inputs are required for the action to run successfully:
 
 - `ERR0_JSON`
-  - Description: Variable de entorno ERR0_JSON
+  - Description: The err0 json stored in action secrets
   - Required: true
 
 - `REPO_URL`
@@ -46,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check err0
     - name: Run err0-check-action
-      uses: Err0-io/ga-check@v1
+      uses: Err0-io/ga-check@v2
       with:
         ERR0_JSON: ${{ secrets.ERR0_JSON }}
         REPO_URL: ${{ secrets.REPO_URL }}
