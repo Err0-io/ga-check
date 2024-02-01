@@ -14,6 +14,7 @@ git fetch --all
 # Realiza el checkout del código deseado
 git checkout $GITHUB_REF
 
+git status
 # Tu código de análisis a continuación
 echo $ERR0_JSON | base64 -d >> /tmp/err0agent.json
 err0.sh --token-file /tmp/err0agent.json --check --git-dir /repo
