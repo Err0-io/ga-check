@@ -1,7 +1,7 @@
 #!/bin/bash 
 # turn the detached message off
 git config --global advice.detachedHead false
-$REPO_URL=$(echo $REPO_URL | sed 's|^https://||')
+REPO_URL=$(echo $REPO_URL | sed 's|^https://||')
 echo $REPO_URL
 # Clones the repository inside the container
 git clone https://doe:$GH_TOKEN@$REPO_URL /repo
