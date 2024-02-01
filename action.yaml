@@ -25,4 +25,4 @@ runs:
     REPO: ${{ inputs.REPO }}
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
     GH_TOKEN: ${{ inputs.GH_TOKEN }}
-    GITHUB_REF: ${GITHUB_REF##*/}
+    GITHUB_REF: ${GITHUB_REF}
