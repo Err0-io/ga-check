@@ -11,6 +11,7 @@ cd /repo
 git ls-remote --heads origin
 git fetch --all
 
+echo $GITHUB_REF
 # Realiza el checkout del código deseado
 git checkout $GITHUB_REF
 
