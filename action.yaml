@@ -17,10 +17,10 @@ runs:
   using: 'docker'
   # image: 'docker://err0io/agent:latest'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.Repo }}
-    - ${{ inputs.ERR0_JSON }}
-    - ${{ inputs.GH_TOKEN }}
+  # args:
+  #   - ${{ inputs.Repo }}
+  #   - ${{ inputs.ERR0_JSON }}
+  #   - ${{ inputs.GH_TOKEN }}
   env:
     REPO: ${{ inputs.REPO }}
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
