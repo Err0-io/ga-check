@@ -1,4 +1,17 @@
-#!/bin/bash -l
+#!/bin/bash 
 
+# Configura el token de acceso personal
+# GIT_TOKEN=$YOUR_GIT_TOKEN  # Reemplaza con tu propio token
+
+# Clona el repositorio dentro del contenedor
+git clone https://$GH_TOKEN@github.com/tu-usuario/tu-repo /repo
+
+# Navega al directorio del repositorio
+cd /repo
+
+# Realiza el checkout del código deseado
+git checkout ${GITHUB_REF##*/}
+
+# Tu código de análisis a continuación
 echo $ERR0_JSON | base64 -d >> /tmp/err0agent.json
-err0.sh --token-file /tmp/err0agent.json --branch ${GITHUB_REF##*/} --check --git-dir .
+err0.sh --token-file /tmp/err0agent.json --check --git-dir /repo
