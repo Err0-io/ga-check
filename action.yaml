@@ -7,12 +7,10 @@ inputs:
   ERR0_JSON:
     description: 'Variable de entorno ERR0_JSON'
     required: true
-  # ERR0_TOKEN:
-  #   description: 'err0 token'
-  #   required: true
 runs:
   using: 'docker'
-  image: 'err0io/agent:latest'
-env:
-  ERR0_JSON: ${{ inputs.ERR0_JSON }}
-  # ERR0_TOKEN: ${{ secrets.ERR0_TOKEN }}
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.ERR0_JSON }}
+# env:
+#   ERR0_JSON: ${{ inputs.ERR0_JSON }}
