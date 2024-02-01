@@ -9,7 +9,8 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://err0io/agent:latest'
+  # image: 'docker://err0io/agent:latest'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.ERR0_JSON }}
   env:
