@@ -1,11 +1,12 @@
 #!/bin/bash 
 # turn the detached message off
 git config --global advice.detachedHead false
-# Clona el repositorio dentro del contenedor
-git clone https://doe:$GH_TOKEN@$REPO /repo
+$REPO_URL=$(echo $REPO_URL | sed 's|^https://||')
 
+# Clones the repository inside the container
+git clone https://doe:$GH_TOKEN@$REPO_URL /repo
 
-# Navega al directorio del repositorio
+# Navigate to the repository directory
 cd /repo
 
 git ls-remote --heads origin
@@ -13,11 +14,11 @@ git fetch --all
 
 GITHUB_REF=$(echo "$GITHUB_REF" | sed 's|^refs/heads/||')
 echo $GITHUB_REF
-# Realiza el checkout del código deseado
+# Checkout the desired code
 git checkout $GITHUB_REF
-
 git status
-# Tu código de análisis a continuación
+
+# Your analysis code below
 echo $ERR0_JSON | base64 -d >> /tmp/err0agent.json
 err0.sh --token-file /tmp/err0agent.json --check --git-dir /repo
 

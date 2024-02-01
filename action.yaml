@@ -15,14 +15,9 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  # image: 'docker://err0io/agent:latest'
   image: 'Dockerfile'
-  # args:
-  #   - ${{ inputs.Repo }}
-  #   - ${{ inputs.ERR0_JSON }}
-  #   - ${{ inputs.GH_TOKEN }}
   env:
-    REPO: ${{ inputs.REPO }}
+    REPO_URL: ${{ inputs.REPO }}
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
     GH_TOKEN: ${{ inputs.GH_TOKEN }}
     GITHUB_REF: ${GITHUB_REF##*/}
