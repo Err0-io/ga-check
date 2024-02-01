@@ -8,8 +8,10 @@ git clone https://doe:$GH_TOKEN@$REPO /repo
 # Navega al directorio del repositorio
 cd /repo
 
-# Realiza el checkout del código deseado
+git ls-remote --heads origin
+git fetch --all
 
+# Realiza el checkout del código deseado
 git checkout $GITHUB_REF
 
 # Tu código de análisis a continuación
