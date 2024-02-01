@@ -3,9 +3,6 @@
 ## Description
 This GitHub Action, named `err0-check-action`, is designed to perform err0 action checks. It verifies errors and checks associated with a specific repository.
 
-## Branding
-- Icon: mic
-- Color: green
 
 ## Inputs
 The following inputs are required for the action to run successfully:
@@ -32,7 +29,7 @@ The following inputs are required for the action to run successfully:
 The action uses the following environment variables:
 
 - `REPO_URL`: The repository https url
-- `ERR0_JSON`: The err0 jason stored in secrets variable
+- `ERR0_JSON`: The err0 json stored in action secrets
 - `GH_TOKEN`: The GitHub token with read and write permissions
 
 ## Example Usage
@@ -49,3 +46,11 @@ jobs:
         ERR0_JSON: ${{ secrets.ERR0_JSON }}
         REPO_URL: ${{ secrets.REPO_URL }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+
+```
+## License
+```
+The err0-check-action is licensed under the MIT License. See the LICENSE file for details.
+```
+

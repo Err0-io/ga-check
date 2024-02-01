@@ -1,8 +1,5 @@
 name: 'err0-check-acction'
 description: 'err0 action check'
-branding:
-  icon: 'mic'
-  color: 'green'
 inputs:
   ERR0_JSON:
     description: 'Variable de entorno ERR0_JSON'
