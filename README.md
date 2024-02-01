@@ -19,6 +19,10 @@ The following inputs are required for the action to run successfully:
   - Description: Github token with read and write permissions
   - Required: true
 
+- `BRANCH_NAME`
+  - Description: Focus our action only on a specific branch. If nothing is declared, the push branch will be referenced. [Does not work in PR's]
+  - Required: false
+
 ## Runs Using
 - Docker
 
@@ -31,6 +35,7 @@ The action uses the following environment variables:
 - `REPO_URL`: The repository https url
 - `ERR0_JSON`: The err0 json stored in action secrets
 - `GH_TOKEN`: The GitHub token with read and write permissions
+- `BRANCH_NAME`: Focusing our Action only in a targeted branch.
 
 ## Example Usage
 ```yaml
@@ -46,6 +51,7 @@ jobs:
         ERR0_JSON: ${{ secrets.ERR0_JSON }}
         REPO_URL: ${{ secrets.REPO_URL }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        BRANCH_NAME: main
 
 
 ```

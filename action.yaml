@@ -10,6 +10,9 @@ inputs:
   GH_TOKEN:
     description: 'Github token with read and write permissions'
     required: true
+  BRANCH_NAME:
+    description: 'Branch name tha we want to target'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +21,4 @@ runs:
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
     GH_TOKEN: ${{ inputs.GH_TOKEN }}
     GITHUB_REF: ${GITHUB_REF##*/}
+    BRANCH_NAME: ${{ inputs.BRANCH_NAME }}
