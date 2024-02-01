@@ -7,6 +7,9 @@ inputs:
   ERR0_JSON:
     description: 'Variable de entorno ERR0_JSON'
     required: true
+  REPO_URL:
+    description: 'Url of repository'
+    required: true
   GH_TOKEN:
     description: 'Github token with read and write permissions'
     required: true
@@ -15,8 +18,11 @@ runs:
   # image: 'docker://err0io/agent:latest'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.Repo }}
     - ${{ inputs.ERR0_JSON }}
     - ${{ inputs.GH_TOKEN }}
+
   env:
+    REPO: ${{ inputs.REPO }}
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
     GH_TOKEN: ${{ inputs.GH_TOKEN }}
