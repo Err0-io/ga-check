@@ -17,7 +17,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    REPO_URL: ${{ inputs.REPO }}
+    REPO_URL: ${{ inputs.REPO_URL }}
     ERR0_JSON: ${{ inputs.ERR0_JSON }}
     GH_TOKEN: ${{ inputs.GH_TOKEN }}
     GITHUB_REF: ${GITHUB_REF##*/}
