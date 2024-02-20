@@ -35,7 +35,7 @@ The following inputs are required for the action to run successfully:
 The action uses the following environment variables:
 
 - `REPO_URL`: The repository https url
-- `ERR0_JSON`: The err0 json stored in action secrets
+- `ERR0_JSON`: The err0 json stored in action secrets coded in base64
 - `GH_TOKEN`: The GitHub token with read and write permissions
 - `BRANCH_NAME`: Focusing our Action only in a targeted branch.
 
