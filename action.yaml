@@ -1,5 +1,8 @@
-name: 'err0-check-acction'
-description: 'err0 action check'
+name: 'Official err0 check action'
+description: 'CI/CD pipeline action to run err0 agent check'
+branding:
+  icon: 'check-circle'
+  color: 'blue'
 inputs:
   ERR0_JSON:
     description: 'Variable de entorno ERR0_JSON'
